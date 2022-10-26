@@ -6,6 +6,8 @@
   --color-body: #918ca4;
 }
 
+/* Typography */
+
 html {
   font-size: 62.5%;
 }
@@ -60,5 +62,34 @@ p {
 
   h3 {
     font-size: 2.4rem;
+  }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px; /*using absolute, as we need to have this amt of space no matter how large the font is */
+  transition: margin 0.15s; /* adding smooth transition in hover effect */
+}
+
+/*  Adding a hover effect, such that the arrow moves right */
+.link-arrow:hover::after {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .link-arrow {
+    font-size: 1.5rem;
   }
 }
