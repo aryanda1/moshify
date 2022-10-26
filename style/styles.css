@@ -93,3 +93,42 @@ a {
     font-size: 1.5rem;
   }
 }
+
+/* Badges */
+/* Defining the structure of badge */
+
+/* The badge font weight looks quite greater, so it needs less weight, so using weight 600 instead of bold */
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: norwap; /* We dont want our badge text to be wrapped in the next line, even if we have limited space*/
+}
+
+/* Defining the skin of badge */
+.badge--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.badge--secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+/* Now  defining different badge font size for small badges*/
+.badge--small {
+  font-size: 1.6rem;
+}
+
+/* Now handling larger screens */
+@media screen and (min-width: 1000px) {
+  .badge {
+    font-size: 1.5rem;
+  }
+
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
