@@ -132,3 +132,33 @@ a {
     font-size: 1.2rem;
   }
 }
+
+/* Lists */
+
+.list {
+  list-style-type: none;
+  color: var(--color-headings);
+  padding-left: 0; /* removing he default left padding */
+}
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  /* The ticks are invisible, so we need to apply a padding left*/
+  padding-left: 3rem;
+}
+
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
