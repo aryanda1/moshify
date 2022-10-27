@@ -4,6 +4,8 @@
   --color-accent: #ff3400;
   --color-headings: #210e6b;
   --color-body: #918ca4;
+  --border-color: #ccc;
+  --border-radius: 30px;
 }
 
 *,
@@ -251,6 +253,42 @@ a {
 
 @media screen and (min-width: 1000px) {
   .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* Inputs */
+.input {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  color: var(--color-headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
+}
+
+/* Changing the color of the placeholder */
+::placeholder {
+  color: #d4d2dd;
+}
+
+.input-group {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex; /* Changing to flex so that the input field should take the entire leftover space */
+}
+
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+}
+
+.input-group .btn {
+  margin: 4px; /* Giving a absolute margin, so that space between button and text field should remain constant */
+}
+
+@media screen and (min-width: 1000px) {
+  .input {
     font-size: 1.5rem;
   }
 }
