@@ -249,6 +249,12 @@ a {
   filter: brightness(0.9);
 }
 
+/* For long buttons */
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 /* Now applying he btn--block on a tag, its size becomes greater than screen, because, box-sizing is not applied, but in button, its applied by default */
 .btn--block {
   display: inline-block;
@@ -502,5 +508,50 @@ a {
 
   .testimonial__image {
     margin: 0;
+  }
+}
+
+/* Callouts */
+
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.callout--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading {
+  margin-top: 0;
+  color: #fff;
+}
+
+/* The button is taking the entire right space, due to default grid align items and justify  items to be stretch*/
+
+.callout .btn {
+  align-self: center;
+  justify-self: center;
+  /* The button in photoshop has additional padding so adding another class for that in button section*/
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  /* If there is a grid in a callout, we need the second column to just take only required space, rest space to be taken by first column */
+  .callout .grid--cols-2 {
+    grid-template-columns: 1fr auto;
+  }
+  .callout__content {
+    text-align: left;
+  }
+
+  /* For larger screen, we need to button to be closer to the content */
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
   }
 }
