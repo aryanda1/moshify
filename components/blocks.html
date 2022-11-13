@@ -1,0 +1,22 @@
+<section class="block container">
+    <!-- Wrapped both of them so that we can apply text align centre on only them, not on any component in the block -->
+    <div class="block__header">
+      <h2 class="block__heading">Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+        commodi.
+      </p>
+    </div>
+  </section>
+
+  <!-- But we cant apply container direct here, as we want background to stretch to take full width, so we wrap the inner content to a div -->
+  <section class="block block--dark block--skewed-left">
+    <div class="container">
+        <h2 class="block__heading">Heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+          commodi.
+        </p>
+      </header>
+    </div>
+  </section>
