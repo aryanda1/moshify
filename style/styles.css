@@ -1,4 +1,4 @@
-Navigation bar:root {
+:root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
@@ -33,6 +33,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 /* h1 font size is 70 px so 7 rem */
@@ -698,5 +699,34 @@ a {
   }
   .nav__item {
     border: 0;
+  }
+}
+
+/* Hero component */
+.hero__tagline {
+  color: #8e969f;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+/* adjust size of image */
+.hero__image {
+  width: 100%;
+}
+
+/* Our default skew left of block needs to be changed for hero component */
+.hero {
+  clip-path: polygon(0 0, 100% 0%, 100% 94%, 0 100%);
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    /* removing the additional top space in desktop mode */
+    padding-top: 0.5rem;
+  }
+  .hero__content {
+    text-align: left;
+    align-self: center; /* For align the content inside the grid */
   }
 }
