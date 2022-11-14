@@ -1,4 +1,4 @@
-:root {
+Navigation bar:root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
@@ -634,4 +634,69 @@ a {
   max-width: 1140px;
   /* But now the contents became left aligned, but we need in the centre of the screen */
   margin: 0 auto;
+}
+
+/* Navigation bar */
+.nav {
+  background: #000;
+  display: flex;
+  justify-content: space-between; /* so that the two elements on the side get position in the side */
+  flex-wrap: wrap; /* so that list can wrap to the next line */
+  padding: 0 1rem;
+  align-items: center; /* so that the toggler and list is aligned in the centre*/
+}
+
+.nav__list {
+  width: 100%; /* giving full width so that it can wrap to next line */
+  margin: 0; /* Remove the default margin of 2 rem of list */
+}
+
+.nav__item {
+  padding: 0.5rem 2rem;
+  border-bottom: 2px solid #222;
+}
+
+.nav__item > a {
+  color: #d2d0db;
+  transition: color 0.3s;
+}
+.nav__item > a:hover {
+  color: #fff;
+}
+
+/* initially lowering the opacity so that if the toggler is toggled in mobile mode, it brightens up */
+.nav__toggler {
+  transition: all 0.3s; /* for opacity and box shadow*/
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px; /* Added border radius as our logo had rounded corner, and we applied a shadow on it so made the shadow also round */
+}
+
+/* Making the brand image at the centre, can use translate of transform or relative position */
+.nav__brand {
+  position: relative;
+  top: 5px;
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggler {
+    display: none; /* hiding  the toggler in large screen*/
+  }
+  .nav__list {
+    width: auto; /* Changed the width so that now the logo and list go in the same line */
+    display: flex;
+    font-size: 1.6rem;
+    /* But the list being a collapsible component, it is invisible */
+    max-height: 100vh;
+    opacity: 1;
+  }
+  .nav__item {
+    border: 0;
+  }
 }
