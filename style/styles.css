@@ -797,3 +797,28 @@ a {
   max-width: 500px;
   margin: 0 auto; /*Aligning the cards in the centre for mobile display*/
 }
+
+/* Features block */
+.feature__img {
+  width: 100%;
+}
+
+.feature {
+  gap: 4rem 2rem; /*4 rem for mobile row wise,2 rem column wise for desktop*/
+  margin: 12rem 0; /*separating the individual features from each other */
+}
+
+.feature__heading {
+  margin-top: 1rem 0; /*decreasing the margin below each icon */
+}
+
+.feature:first-of-type {
+  margin-top: 6rem; /*Decreasing top margin for the first feature*/
+}
+
+/* Making order of even features reverse */
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
+}
