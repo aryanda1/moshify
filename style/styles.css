@@ -350,7 +350,15 @@ a {
   background: #02cdf1;
 }
 
+.card--primary .badge--primary {
+  background: #126de4;
+}
+
 /* Plans */
+.plan {
+  transition: transform 0.3s;
+}
+
 .plan__name {
   color: #fff;
   font-size: 2.4rem;
@@ -393,7 +401,20 @@ a {
   right: 6%;
 }
 
+/* On mobile version all plans have same size and same hover effect */
+.plan:hover {
+  transform: scale(1.05);
+}
+
 @media screen and (min-width: 1000px) {
+  /* On bigger screen, popular plan has initial more size and more hover zoom */
+  .plan--popular {
+    transform: scale(1.1);
+  }
+  .plan--popular:hover {
+    transform: scale(1.15);
+  }
+
   .plan__name {
     font-size: 1.4rem;
   }
@@ -765,4 +786,14 @@ a {
     /* Or we can use auto-fit */
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
+}
+
+/* Plans block*/
+.block-plans .grid {
+  gap: 8rem 4rem; /* Added row gap of 8 rem for mobiles and 4rem column gap for desktop */
+}
+
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto; /*Aligning the cards in the centre for mobile display*/
 }
