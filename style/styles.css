@@ -226,7 +226,7 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw; /*changed the horizontal padding, so that on small screen, it takes less padding, but for larger screen, changed in the media query*/
   text-align: center; /*For anchor tag ,aka 'a'*/
   text-transform: uppercase;
   white-space: nowrap;
@@ -293,6 +293,7 @@ a {
 @media screen and (min-width: 1000px) {
   .btn {
     font-size: 1.5rem;
+    padding: 2rem 3rem;
   }
 }
 
@@ -320,7 +321,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  width: 0; /* so that on small screen, the search button doesnt gets out of the screen, remove the property and see the effect */
+  width: 0; /* so that on small screen, the search button doesnt gets out of the screen, remove the property, as input field width was assigned a width of 278px by default by browser, so on reducing the width of the screen, the parent width decreased, but input field width decreased to minimum of 278px, so setting its width to 0, and than flex grow will take care of it */
 }
 
 .input-group .btn {
@@ -520,6 +521,11 @@ a {
 .testimonial {
   padding: 3rem;
 }
+
+.testimonial .quote {
+  margin: 2rem 0; /*removing the horizontal default margin making more space for quote in mobile screens*/
+}
+
 /* Selecting the direct child under testimonial_img */
 .testimonial__image > img {
   width: 100%;
@@ -527,7 +533,7 @@ a {
 
 .testimonial__image {
   position: relative;
-  margin: 0 7rem;
+  margin: 0 3rem; /*changed so that there is more space for image for mobile screen*/
 }
 
 .testimonial__image > .icon-container {
@@ -557,6 +563,8 @@ a {
 .callout {
   padding: 4rem;
   border-radius: 5px;
+  position: relative; /*changed its realtive position so that it goes slightly inside the footer*/
+  top: 5rem;
 }
 
 .callout--primary {
@@ -686,7 +694,7 @@ a {
   display: flex;
   justify-content: space-between; /* so that the two elements on the side get position in the side */
   flex-wrap: wrap; /* so that list can wrap to the next line */
-  padding: 0 1rem;
+  padding: 1rem; /*need a vertical padding as well, as got a vertical line on adding the hero component*/
   align-items: center; /* so that the toggler and list is aligned in the centre*/
 }
 
@@ -784,13 +792,23 @@ a {
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /*on very less wide mobile scrren, 3 column in 1 row, apperared quite squashed, so changed to 2*/
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
   max-width: 730px;
   margin: 0 auto; /* For centre aligning the list item if width is greater than 730px */
+}
+
+/* But changed back to 3 columns for width greater than 375px */
+@media screen and (min-width: 375px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -859,6 +877,7 @@ a {
 /* Footer */
 .footer {
   background: #232323; /*changed the background from black to light black as in the hotoshop design*/
+  padding-top: 10rem; /*so that there is sufficient space between callout component and text in footer*/
 }
 
 .footer__section {
