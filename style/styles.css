@@ -527,7 +527,7 @@ a {
 
 .testimonial__image {
   position: relative;
-  margin: 0 3rem;
+  margin: 0 7rem;
 }
 
 .testimonial__image > .icon-container {
@@ -643,6 +643,7 @@ a {
 .block__header {
   /* as in photoshop in every block the header and the following paragraph is centred aligned */
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 /* Removing the top margin of h2 */
