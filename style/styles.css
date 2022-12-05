@@ -840,7 +840,7 @@ a {
 }
 
 .feature__heading {
-  margin-top: 1rem 0; /*decreasing the margin below each icon */
+  margin-top: 1rem; /*decreasing the margin below each icon */
 }
 
 .feature:first-of-type {
