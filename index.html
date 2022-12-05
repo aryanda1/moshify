@@ -21,7 +21,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style/normalize.css" />
     <link rel="stylesheet" href="style/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
@@ -29,7 +28,9 @@
     <!-- h${Heading $}*3 - makes 3 headings with labels heading-->
     <header>
       <nav class="nav collapsible">
-        <a class="nav__brand" href="/"><img src="images/logo.svg" alt="" /></a>
+        <a aria-label="Moshify" class="nav__brand" href="/"
+          ><img src="images/logo.svg" alt=""
+        /></a>
         <svg class="icon icon--white nav__toggler">
           <use xlink:href="./images/sprite.svg#menu"></use>
         </svg>
@@ -487,7 +488,9 @@
         </div>
 
         <div class="footer__brand">
-          <a href="/"><img src="images/logo.svg" alt="" /></a>
+          <a aria-label="Moshify" href="/"
+            ><img src="images/logo.svg" alt=""
+          /></a>
           <p class="footer__copyright">Copyright &copy; 2020 mosh</p>
         </div>
       </div>
